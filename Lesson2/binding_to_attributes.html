@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 2 - Binding to attributes</title>
+</head>
+<body>
+  <!-- Directive is an instruction you place in your code -->
+  <!-- Bellow, we use v-bind to attach a link to the href of the a component. -->
+  <div id="app">
+    <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+  </div>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        title: 'Hello, World!',
+        link: "http://google.com"
+      },
+      methods: {
+        sayHello: function() {
+          return this.title;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

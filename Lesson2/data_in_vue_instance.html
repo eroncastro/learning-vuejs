@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 2 - Accessing data in the Vue instance</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{ sayHello() }}</p>
+  </div>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        title: 'Hello, World!'
+      },
+      methods: {
+        sayHello: function() {
+          return this.title;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

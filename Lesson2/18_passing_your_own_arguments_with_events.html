@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 2 - Passing your own arguments with events</title>
+</head>
+<body>
+  <div id="app">
+    <!--
+    The v-on directive is used to listen for events on DOM elements
+    To pass your own arguments, all you have to do is pass the argument to the element
+    And put it in your method arguments' list:
+    <button v-on:click="increase(2)">Click me</button>
+
+    To pass your own argument and still get the default event object that is automatically
+    passed to a event listener, you have to pass $event () to method:
+    <button v-on:click="increase(2, $event)">Click me</button>
+
+    IMPORTANT: $event is a protected name, which means we MUST NOT override it!
+    -->
+    <button v-on:click="increase(2, $event)">Click me</button> -->
+    <p>{{ counter }}</p>
+    <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
+  </div>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        counter: 0,
+        x: 0,
+        y: 0
+      },
+      methods: {
+        increase: function(step, event) {
+          this.counter += step;
+        },
+        updateCoordinates: function(event) {
+          this.x = event.clientX;
+          this.y = event.clientY;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

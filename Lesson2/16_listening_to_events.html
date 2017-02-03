@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 2 - Listening to events</title>
+</head>
+<body>
+  <div id="app">
+    <!-- The v-on directive is used to listen for events-->
+    <button v-on:click="increase">Click me</button>
+    <p>{{ counter }}</p>
+  </div>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        counter: 0
+      },
+      methods: {
+        increase: function() {
+          this.counter++;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 2 - Using two way binding</title>
+</head>
+<body>
+  <!--
+    Two way data binding:
+    We want to output data and in the same time
+    update the data.
+    All we have to do in this direction is to use the v-model directive
+    in respect to the data property. This will tell Vue to set two way
+    data binding for this data property. And, in one hand, it will output
+    the value as well as listen to changes and update it.
+  -->
+  <div id="app">
+    <input type="text" v-model="name">
+    <p>{{ name }}</p>
+  </div>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        name: 'Max'
+      }
+    });
+  </script>
+</body>
+</html>

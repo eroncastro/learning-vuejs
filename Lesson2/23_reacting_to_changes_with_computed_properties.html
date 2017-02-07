@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 2 - Reacting to changes with computed properties</title>
+</head>
+<body>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        counter: 0,
+        result: ''
+      },
+      methods: {
+        increase: function() {
+          this.counter++;
+          this.result = this.counter > 5 ? 'Greater 5' : 'Smaller 5'
+        }
+      }
+    });
+  </script>
+</body>
+</html>

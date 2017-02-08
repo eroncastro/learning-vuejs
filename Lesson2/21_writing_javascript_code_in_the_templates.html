@@ -11,6 +11,7 @@
     with Vue.
      -->
     <button v-on:click="counter++">Click me</button>
+    <p>{{ counter }}</p>
     <p>{{ counter * 2 > 10 ? 'Greater than 10' : 'Smaller than 10' }}</p>
     <p v-on:mousemove="updateCoordinates">
       Coordinates: {{ x }} / {{ y }} -

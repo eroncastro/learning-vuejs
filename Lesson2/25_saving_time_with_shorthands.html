@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div id="app">
+    <!--
+    v-on is equivalent to @
+    So,
+    <button v-on:click="changeLink">Click to Change Link</button>
+    is the same as
+    <button @click="changeLink">Click to Change Link</button>
+    -->
+    <button @click="changeLink">Click to Change Link</button>
+    <!--
+    v-bind: is equivalent to :
+    So,
+    <a v-bind:href="link">Link</a>
+    is the same as
+    <a :href="link">Link</a>
+     -->
+    <a :href="link">Link</a>
+  </div>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        link: 'http://google.com'
+      },
+      methods: {
+        changeLink: function() {
+          this.link = 'http://apple.com'
+        }
+      }
+    });
+  </script>
+</body>
+</html>

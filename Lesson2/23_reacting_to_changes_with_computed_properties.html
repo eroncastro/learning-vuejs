@@ -4,18 +4,39 @@
   <title>Lesson 2 - Reacting to changes with computed properties</title>
 </head>
 <body>
+  <div id="app">
+    <button v-on:click="counter++">Increase</button>
+    <button v-on:click="counter--">Decrease</button>
+    <button v-on:click="secondCounter++">Increase second</button>
+    <p>Counter: {{ counter }} | {{ secondCounter }}</p>
+    <p>Result: {{ result() }} | {{ output }}</p>
+  </div>
+
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script type="text/javascript">
     new Vue({
       el: '#app',
+      // Data is not reactive. This means I cannont write things like:
+      // result: this.counter > 5 ? Greater than 5 : Smaller than 5
+      // One way to do it would be by using a method. The other, would
+      // be use computed properties. The advantage of the latter over
+      // the former is that it will only get called when it is really
+      // needed. To use it, we don't call the function; instead, we use
+      // it like a data property.
       data: {
         counter: 0,
-        result: ''
+        secondCounter: 0,
+      },
+      computed: {
+        output: function() {
+          console.log('Computed');
+          return this.counter > 5 ? 'Greater than 5' : 'Smaller than 5'
+        }
       },
       methods: {
-        increase: function() {
-          this.counter++;
-          this.result = this.counter > 5 ? 'Greater 5' : 'Smaller 5'
+        result: function() {
+          console.log('Method');
+          return this.counter > 5 ? 'Greater than 5' : 'Smaller than 5'
         }
       }
     });

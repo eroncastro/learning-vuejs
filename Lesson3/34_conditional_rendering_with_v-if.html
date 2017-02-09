@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 3 - Conditional rendering with v-if</title>
+</head>
+<body>
+  <!--
+    New directive: v-if
+    It allows us to apply it to a condition or a property
+    which resolves to true or false. It attaches or dettaches
+    elements to the DOM.
+    v-else will refer to the latest v-if. In Vue.js 2.1, there is v-else-if.
+    For that, we have to use other v-if's
+  -->
+  <div id="app">
+    <p v-if="show">You can see me! </p>
+    <p v-else>Now you see me!</p>
+    <p>Do you also see me?</p>
+    <button v-on:click="show = !show">Switch</button>
+  </div>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        show: true
+      }
+    });
+  </script>
+</body>
+</html>

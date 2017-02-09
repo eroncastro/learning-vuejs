@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 2 - Styling elements with the array syntax</title>
+  <style type="text/css">
+    .demo {
+      width: 100px;
+      height: 100px;
+      background-color: gray;
+      display: inline-block;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="demo" :style="{backgroundColor: color}"></div>
+    <div class="demo" :style="myStyle"></div>
+    <div class="demo" :style="[myStyle, {height: width + 'px'}]"></div>
+    <hr>
+    <input type="text" v-model="color">
+    <input type="text" v-model="width">
+  </div>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        color: 'green',
+        width: 100
+      },
+      computed: {
+        myStyle: function() {
+          return {
+            backgroundColor: this.color,
+            width: this.width + 'px'
+          };
+        }
+      }
+    });
+  </script>
+</body>
+</html>

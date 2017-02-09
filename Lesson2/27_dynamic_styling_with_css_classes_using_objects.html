@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 2 - Dynamic styling with CSS classes using objects</title>
+  <style type="text/css">
+    .demo {
+      width: 100px;
+      height: 100px;
+      background-color: gray;
+      display: inline-block;
+      margin: 10px;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .green {
+      background-color: green;
+    }
+
+    .blue {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="demo" @click="attachRed = !attachRed" :class="divClasses"></div>
+    <div class="demo" :class="{red: attachRed}"></div>
+    <div class="demo"></div>
+  </div>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        attachRed: false
+      },
+      computed: {
+        divClasses: function() {
+          return {
+            red: this.attachRed,
+            blue: !this.attachRed
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

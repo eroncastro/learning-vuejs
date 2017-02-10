@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 3 - Looping through objects</title>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <!-- To keep track of an element, we use a unique key for each element. -->
+      <li v-for="(ingredient, i) in ingredients" v-bind:key="ingredient">{{ ingredient }} ({{ i }})</li>
+    </ul>
+
+    <button @click="ingredients.push('spices')">Add new</button>
+
+    <hr>
+
+    <ul>
+      <li v-for="person in persons">
+        <div v-for="(value, key, index) in person">{{ key }}: {{ value }} ({{ index }})</div>
+      </li>
+    </ul>
+
+    <span v-for="n in 10"> {{ n }}</span>
+    <hr>
+
+    <template v-for="(ingredient, index) in ingredients">
+      <h1>{{ ingredient }}</h1>
+      <p>{{ index }}</p>
+    </template>
+  </div>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        ingredients: ['meat', 'fruit', 'cookies'],
+        persons: [
+          {name: 'Max', age: 27, color: 'red'},
+          {name: 'Anna', age: 'unknown', color: 'blue'}
+        ]
+      }
+    });
+  </script>
+</body>
+</html>

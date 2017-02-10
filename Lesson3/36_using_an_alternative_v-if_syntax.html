@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lesson 3 - Conditional rendering with v-if</title>
+  <title>Lesson 3 - Using an alternative v-if syntax</title>
 </head>
 <body>
-  <!--
-    New directive: v-if
-    It allows us to apply it to a condition or a property
-    which resolves to true or false. It attaches or dettaches
-    elements to the DOM.
-    v-else will refer to the latest v-if. In Vue.js 2.1, there is v-else-if.
-    For that, we have to use other v-if's
-  -->
   <div id="app">
     <p v-if="show">You can see me! <span>Hello!</span></p>
     <p v-else>Now you see me!</p>
-    <p>Do you also see me?</p>
+    <!--
+    The HTML5 template tag does not get rendered into the DOM.
+    This makes it a good spot for placing elements that wil be
+    conditionally rendered.
+     -->
+    <template v-if="show">
+      <h1>Heading</h1>
+      <p>Inside a template</p>
+    </template>
     <button v-on:click="show = !show">Switch</button>
   </div>
 

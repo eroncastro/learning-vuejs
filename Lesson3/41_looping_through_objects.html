@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 3 - Looping through objects</title>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(ingredient, i) in ingredients">{{ ingredient }} ({{ i }})</li>
+    </ul>
+
+    <hr>
+    <!--
+    What if we have an array of objects and want to loop through the objects?
+     -->
+    <ul>
+      <li v-for="person in persons">
+        <!--
+        As we see below, it is very straightforward to loop through objects.
+         -->
+        <div v-for="(value, key, index) in person">{{ key }}: {{ value }} ({{ index }})</div>
+      </li>
+    </ul>
+
+    <hr>
+
+    <template v-for="(ingredient, index) in ingredients">
+      <h1>{{ ingredient }}</h1>
+      <p>{{ index }}</p>
+    </template>
+  </div>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        ingredients: ['meat', 'fruit', 'cookies'],
+        persons: [
+          {name: 'Max', age: 27, color: 'red'},
+          {name: 'Anna', age: 'unknown', color: 'blue'}
+        ]
+      }
+    });
+  </script>
+</body>
+</html>

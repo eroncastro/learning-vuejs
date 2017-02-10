@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 3 - Rendering lists with v-for</title>
+</head>
+<body>
+  <!--
+  The v-for directive allows us to loop through arrays.
+   -->
+  <div id="app">
+    <ul>
+      <li v-for="ingredient in ingredients">{{ ingredient }}</li>
+    </ul>
+  </div>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      data: {
+        ingredients: ['meat', 'fruit', 'cookies'],
+        persons: [
+          {name: 'Max', age: 27, color: 'red'},
+          {name: 'Anna', age: 'unknown', color: 'blue'}
+        ]
+      }
+    });
+  </script>
+</body>
+</html>

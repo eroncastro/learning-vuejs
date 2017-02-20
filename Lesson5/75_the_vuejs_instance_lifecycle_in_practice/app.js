@@ -29,6 +29,7 @@ new Vue({
   },
   methods: {
     destroy: function() {
+      // When called, Vue instance will no longer control the #app element.
       this.$destroy();
     }
   }

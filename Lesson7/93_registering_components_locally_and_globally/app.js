@@ -1,6 +1,6 @@
 /*
-  What if we wanted to register components locally and globally?
-  First, we do:
+  To register components globally we use Vue.component
+  To register components locally we do:
 */
 
 var cmp = {

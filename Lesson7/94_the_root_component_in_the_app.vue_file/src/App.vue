@@ -4,8 +4,10 @@
 
 <script>
   export default {
-    data: {
-      status: 'Critical'
+    data: function () {
+      return {
+        status: 'Critical'
+      }
     }
   }
 </script>
@@ -13,3 +15,4 @@
 <style>
 
 </style>
+

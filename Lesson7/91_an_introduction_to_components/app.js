@@ -13,12 +13,12 @@
     <my-cmp></my-cmp>
   </div>
 
-  IMPORTANT: We must make our component unique, in order not to conflict if
+  IMPORTANT: We must make our component unique, in order not to cause conflict with
   already existent ones. A good way to do it is to add a prefix to it.
 
   The first argument of Vue.component is the element tag.
   The second is a data object, similar to what we have been using for the Vue instance.
-  But, we must beware that our data now has to be a function that return a Object.
+  But, we must beware that our data now has to be a function that returns an Object.
   Otherwise, VueJS will raise an exception, due to the fact that data will conflict
   among other components.
 

@@ -21,6 +21,7 @@
       },
       resetName() {
         this.myName = 'Max';
+        // Custom event emitter
         this.$emit('nameWasReset', this.myName);
       }
     }

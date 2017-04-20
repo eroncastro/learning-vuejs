@@ -3,6 +3,7 @@
 </template>
 
 <script>
+  console.log(module);
   export default {
     data: function () {
       return {

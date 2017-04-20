@@ -9,7 +9,7 @@
 
   It will allow us to use it like this
 
-  <div id="app":
+  <div id="app">
     <my-cmp></my-cmp>
   </div>
 

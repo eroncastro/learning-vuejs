@@ -16,6 +16,25 @@
     an array of valid type or an object.
 
     A validation error will prevent the component from being mounted.
+
+    Examples of props:
+
+    props: ['myName']
+    props: {
+      'myName': String
+    }
+    props: {
+      'myName': {
+        type: String,
+        require: true
+      }
+    }
+    props: {
+      'myName': {
+        type: String,
+        default: 'some string'
+      }
+    }
   */
   export default {
     props: {

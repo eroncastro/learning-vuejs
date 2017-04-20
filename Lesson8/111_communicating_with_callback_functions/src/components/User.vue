@@ -16,7 +16,11 @@
         <!--
           It is possible to pass a callback as a prop.
          -->
-        <app-user-detail :myName="name" @nameWasReset="name = $event" :resetFn="resetName"></app-user-detail>
+        <app-user-detail
+          :myName="name"
+          @nameWasReset="name = $event"
+          :resetFn="resetName">
+        </app-user-detail>
       </div>
       <div class="col-xs-12 col-sm-6">
         <app-user-edit></app-user-edit>

@@ -9,7 +9,7 @@
   export default {
     methods: {
       increment(by) {
-        this.$store.dispatch('increment', by);
+        this.$store.dispatch('increment');
       },
       decrement() {
         this.$store.dispatch('decrement');

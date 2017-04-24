@@ -22,19 +22,20 @@ export const store = new Vuex.Store({
   },
   mutations: {
     // Mutations must run synchronously. To improve them we use actions.
-    increment: (state, payload) => {
-      state.counter += payload;
+    increment: state => {
+      state.counter++;
     },
     decrement: state => {
       state.counter--;
     }
   },
   actions: {
-    increment: ({ commit }, payload) => {
-      commit('increment', payload);
+    // It is a better practice to use actions to commit mutations.
+    increment: ({ commit }) => {
+      commit('increment');
     },
-    decrement: ({ commit }, payload) => {
-      commit('decrement', payload);
+    decrement: ({ commit }) => {
+      commit('decrement');
     },
     asyncIncrement: ({ commit }) => {
       setTimeout(() => {

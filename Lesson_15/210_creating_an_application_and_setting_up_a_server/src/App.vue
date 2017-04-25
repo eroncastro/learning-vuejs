@@ -30,6 +30,7 @@
     methods: {
       submit() {
         const url = 'https://http-request-f80c4.firebaseio.com/data.json';
+
         this.$http.post(url, this.user)
           .then(response => {
             console.log(response);

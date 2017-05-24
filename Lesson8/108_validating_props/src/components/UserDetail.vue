@@ -25,7 +25,7 @@
     }
     props: {
       'myName': {
-        type: String,
+        type: [String, Number],
         require: true
       }
     }

@@ -2,6 +2,7 @@
   <div>
     <h3>Some User Details</h3>
     <p>User loaded has ID: {{ $route.params.id }}</p>
+    <p>User loaded has ID token: {{ id_token }}</p>
     <router-link
       tag="button"
       :to="link"
@@ -26,6 +27,12 @@
           },
           hash: '#data'
         }
+      }
+    },
+    computed: {
+      id_token() {
+        debugger;
+        return $route.hash.id_token;
       }
     },
     beforeRouterEnter(to, from, next) {

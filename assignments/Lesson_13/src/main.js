@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-Vue.filter('word-length', function(value) {
+Vue.filter('word-length', (value) => {
   return `${value} (${value.length})`;
 });
 

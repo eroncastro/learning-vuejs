@@ -4,8 +4,7 @@
       <div class="col-xs-12">
         <!--
           <app-quote :quote="A wonderful quote!"></app-quote>
-        -->
-        <!--
+
           We want to be able to do the following:
           <app-quote>
             <h2>The quote</h2>

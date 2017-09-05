@@ -6,7 +6,6 @@
 
 <script>
   export default {
-    props: ['quote']
   }
 </script>
 

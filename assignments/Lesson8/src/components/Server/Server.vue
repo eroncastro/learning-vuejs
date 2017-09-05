@@ -21,13 +21,6 @@
       selectServer() {
         serverBus.$emit('selectServer', this.server);
       }
-    },
-    created() {
-      serverBus.$on('resetStatus', (server) => {
-        if (this.server.id === server.id) {
-          this.server.status = 'Normal';
-        }
-      });
     }
   }
 </script>

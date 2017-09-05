@@ -23,7 +23,7 @@
     },
     methods: {
       resetStatus() {
-        serverBus.$emit('resetStatus', this.server);
+        this.server.status = 'Normal';
       }
     }
   }

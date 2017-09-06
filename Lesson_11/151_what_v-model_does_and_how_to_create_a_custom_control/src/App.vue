@@ -130,7 +130,7 @@
       </div>
 
       <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 from-group">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-group">
           <label for="priority">Priority</label>
           <!--
             On the select element below, VueJS will use sectedPriority as the default value.
@@ -145,6 +145,14 @@
               {{ priority }}
             </option>
           </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-group">
+          <app-switch>
+
+          </app-switch>
         </div>
       </div>
 
@@ -190,22 +198,27 @@
 </template>
 
 <script>
-    export default {
-      data() {
-        return {
-          userData: {
-            email: '',
-            password: '',
-            age: 27
-          },
-          message: 'A new Text',
-          sendMail: [],
-          gender: 'Male',
-          selectedPriority: 'High',
-          priorities: ['High', 'Medium', 'Low']
-        };
-      }
+  import Switch from './Switch.vue';
+
+  export default {
+    data() {
+      return {
+        userData: {
+          email: '',
+          password: '',
+          age: 27
+        },
+        message: 'A new Text',
+        sendMail: [],
+        gender: 'Male',
+        selectedPriority: 'High',
+        priorities: ['High', 'Medium', 'Low']
+      };
+    },
+    components: {
+      appSwitch: Switch
     }
+  }
 </script>
 
 <style>

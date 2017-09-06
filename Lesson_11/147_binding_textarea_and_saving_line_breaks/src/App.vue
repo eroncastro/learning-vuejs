@@ -25,7 +25,7 @@
             <label for="password">Password</label>
             <!--
               The lazy modifier makes the input not react to the input
-              event, but the change event.
+              event, but to the change event.
              -->
             <input
               type="password"

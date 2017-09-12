@@ -10,7 +10,7 @@
             aria-valuenow="60"
             aria-valuemin="0"
             aria-valuemax="100"
-            :style="{ width: `$(maxQuotes ? (100 * quoteCount / maxQuotes) : 0)%` }">
+            :style="{ width: `${maxQuotes ? (100 * quoteCount / maxQuotes) : 0}%` }">
             {{ quoteCount }} / {{ maxQuotes }}
           </div>
         </div>

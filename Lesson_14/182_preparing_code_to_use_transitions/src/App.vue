@@ -13,10 +13,7 @@
           It is only possible to animate one element with a transition.
         -->
         <transition>
-          <div>
-            <div class="alert alert-info" v-if="show">This is some info</div>
-            <div class="alert alert-info" v-if="show">This is some info</div>
-          </div>
+          <div class="alert alert-info" v-if="show">This is some info</div>
         </transition>
       </div>
     </div>

@@ -72,7 +72,7 @@
       transform: translateY(20px);
     }
     to {
-      transform: translate Y(0);
+      transform: translateY(0);
     }
   }
 

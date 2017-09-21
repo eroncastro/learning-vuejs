@@ -61,7 +61,7 @@
 
   .slide-enter-active {
     animation: slide-in 1s ease-out forwards;
-    transition: opacity .5s;
+    transition: opacity 3s;
   }
 
   .slide-leave {
@@ -69,7 +69,7 @@
   }
 
   /*
-    When Vue JS will take the longest duration
+    VueJS will take the longest duration
     whenever we have both transition and animation.
   */
   .slide-leave-active {

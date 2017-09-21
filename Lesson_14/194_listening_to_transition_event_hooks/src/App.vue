@@ -12,12 +12,24 @@
         <br>
         <button class="btn btn-primary" @click="show = !show">Show Alert</button>
         <br><br>
+        <!--
+          The transition element emits some events we can listen to in order
+          to perform some actions:
+          - before-enter
+          - enter
+          - after-enter
+          - after-enter-cancelled
+          - before-leave
+          - leave
+          - after-leave
+          - after-leave-cancelled
+        -->
         <transition :name="alertAnimation">
           <div class="alert alert-info" v-if="show">This is some info</div>
         </transition>
         <!--
-          We use type to setup which one (animation or transition) to determine
-          which one will dictate both to come to an end.
+          We use type to setup which one (animation or transition) will
+          determine the length of the transition.
         -->
         <transition name="slide" :type="alertAnimation">
           <div class="alert alert-info" v-if="show">This is some info</div>
@@ -40,7 +52,7 @@
           - out-in - let the old element animate out first and then the new one in
           - in-out - the opposite
         -->
-        <transition :name="alertAnimation" :type="alertAnimation" mode="out-in">
+        <transition :name="alertAnimation" mode="out-in">
           <div class="alert alert-info" v-if="show" key="info">This is some info</div>
           <div class="alert alert-warning" v-else key="warning">This is some warning</div>
         </transition>

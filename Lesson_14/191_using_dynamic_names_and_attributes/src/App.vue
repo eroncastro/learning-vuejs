@@ -16,8 +16,8 @@
           <div class="alert alert-info" v-if="show">This is some info</div>
         </transition>
         <!--
-          We use type to setup which one (animation or transition) to determine
-          which one will dictate both to come to an end.
+          We use type to setup which one (animation or transition) will
+          determine the length of the transition.
         -->
         <transition name="slide" :type="alertAnimation">
           <div class="alert alert-info" v-if="show">This is some info</div>

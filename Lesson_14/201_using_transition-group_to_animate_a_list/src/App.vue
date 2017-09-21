@@ -254,6 +254,10 @@
     animation: slide-out 1s ease-out forwards;
     transition: opacity 1s;
     opacity: 0;
+    /*
+      position: absolute; allows elements to move upon each other
+      while they are getting removed from the DOM.
+    */
     position: absolute;
   }
 

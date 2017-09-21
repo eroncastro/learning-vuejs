@@ -10,8 +10,8 @@
           <div class="alert alert-info" v-if="show">This is some info</div>
         </transition>
         <!--
-          We use type to setup which one (animation or transition) to determine
-          which one will dictate both to come to an end.
+          We use type to setup which one (animation or transition) will
+          determine the length of the transition.
         -->
         <transition name="slide" type="animation">
           <div class="alert alert-info" v-if="show">This is some info</div>
@@ -79,7 +79,7 @@
   }
 
   /*
-    When Vue JS will take the longest duration
+    VueJS will take the longest duration
     whenever we have both transition and animation.
   */
   .slide-leave-active {

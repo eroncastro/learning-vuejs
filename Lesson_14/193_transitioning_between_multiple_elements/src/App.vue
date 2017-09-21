@@ -33,14 +33,14 @@
           <div class="alert alert-info" v-if="show">This is some info</div>
         </transition>
         <!--
-          We add the key element to the below elements to make VueJS differentiate
+          We added the key element to the below elements to make VueJS differentiate
           between them.
 
           Modes:
           - out-in - let the old element animate out first and then the new one in
           - in-out - the opposite
         -->
-        <transition :name="alertAnimation" :type="alertAnimation" mode="out-in">
+        <transition :name="alertAnimation" mode="out-in">
           <div class="alert alert-info" v-if="show" key="info">This is some info</div>
           <div class="alert alert-warning" v-else key="warning">This is some warning</div>
         </transition>

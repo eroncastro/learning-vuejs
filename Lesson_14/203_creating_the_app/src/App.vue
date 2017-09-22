@@ -11,7 +11,7 @@
         <component
           :is="mode"
           @answered="answered($event)"
-          @confirmed="mode = 'app-question'">
+          @confirmed="confirmed($event)">
         </component>
       </div>
     </div>
@@ -25,22 +25,25 @@
   export default {
     data() {
       return {
-        mode: 'app-question'
-      }
+        mode: 'question'
+      };
     },
     methods: {
       answered(isCorrect) {
         if (isCorrect) {
-          this.mode = 'app-answer';
+          this.mode = 'answer';
         } else {
-          this.mode = 'app-question';
-          alert('Wrong, try again!');
+          this.mode = 'question';
+          alert('Wrong! Try again!');
         }
+      },
+      confirmed() {
+        this.mode = 'question';
       }
     },
     components: {
-      appQuestion: Question,
-      appAnswer: Answer
+      Question,
+      Answer
     }
   }
 </script>

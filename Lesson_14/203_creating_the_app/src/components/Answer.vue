@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  export default{
+  export default {
     methods: {
       onNextQuestion() {
         this.$emit('confirmed');

@@ -13,14 +13,15 @@
             type="number"
             class="form-control"
             placeholder="quantity"
-            v-model.number="quantity">
+            v-model.number="quantity"
+            :class="{ danger: insufficientQuantity }">
         </div>
         <div class="pull-right">
           <button
             class="btn btn-success"
             @click="placeSellOrder"
-            :disabled="this.quantity <= 0 || !Number.isInteger(this.quantity)">
-            Sell
+            :disabled="validateSale">
+            {{ insufficientQuantity ? 'Not enough' : 'Sell' }}
           </button>
         </div>
       </div>
@@ -50,6 +51,14 @@
           stockPrice: this.stock.price,
           quantity: this.quantity
         };
+      },
+      insufficientQuantity() {
+        return this.quantity > this.stock.quantity;
+      },
+      validateSale() {
+        return (this.quantity <= 0 ||
+                !Number.isInteger(this.quantity) ||
+                this.insufficientQuantity)
       }
     },
     methods: {
@@ -61,3 +70,9 @@
     }
   }
 </script>
+
+<style scoped>
+  .danger {
+    border: 1px solid red;
+  }
+</style>

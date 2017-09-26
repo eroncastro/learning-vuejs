@@ -25,6 +25,7 @@ const mutations = {
     } else {
       state.stocks.push({ id: stockId, quantity });
     }
+
     state.funds -= stockPrice * quantity;
   },
   'SELL_STOCK'(state, { stockId, quantity, stockPrice }) {
